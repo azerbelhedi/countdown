@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>counter</title>
+	<style type="text/css">
+		#time {font-size : 200px;color : yellow;}
+		#plus {font-size : 50px; color : green;}
+		#minus {font-size : 50px; color : red;}
+	</style>
+</head>
+<body background="Computer-science-D1.jpg">
+	<center>
+		<audio id ="song" src = "beam.mp3"></audio>
+		<h1 id="time">60</h1>
+		<button id="plus" onclick="tplus(10)">plus</button>
+		<button id="minus" onclick="tminus(10)">minus</button>
+
+	</center>	
+<script type="text/javascript">
+	function tplus(v)
+	{
+		var a=document.getElementById("time");
+		var i;
+		for(i=0; i<v; i++)
+		{
+			a.innerHTML++;
+		}
+	}
+
+	function tminus(t)
+	{
+		var a=document.getElementById("time");
+		if(a.innerHTML>0)
+		{
+			a.innerHTML-=t;
+		}
+	}
+
+	function count()
+	{	
+		tminus(1);
+		var a=document.getElementById("time");
+		var b=document.getElementById("song");
+		if(a.innerHTML==1)
+		{
+			song.play();
+		}
+
+	}
+
+	setInterval(count,1000);
+
+
+</script>
+</body>
+</html>
