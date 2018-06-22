@@ -3,7 +3,7 @@
 <head>
 	<title>counter</title>
 	<style type="text/css">
-		#time {font-size : 200px;color : yellow;}
+		#time {font-size : 200px;color : green;}
 		#plus {font-size : 50px; color : green;}
 		#minus {font-size : 50px; color : red;}
 	</style>
@@ -17,6 +17,15 @@
 
 	</center>	
 <script type="text/javascript">
+	function testcolor()
+	{
+		var a=document.getElementById("time");
+		if(a.innerHTML>60){a.style.color ="green";}
+		if(a.innerHTML<60 && a.innerHTML >10){a.style.color ="yellow";}
+		if(a.innerHTML<10){a.style.color ="red";}
+	}	
+
+
 	function tplus(v)
 	{
 		var a=document.getElementById("time");
@@ -25,6 +34,7 @@
 		{
 			a.innerHTML++;
 		}
+		testcolor();
 	}
 
 	function tminus(t)
@@ -33,11 +43,14 @@
 		if(a.innerHTML>0)
 		{
 			a.innerHTML-=t;
+			if(a.innerHTML<0){a.innerHTML=0;}
 		}
+		testcolor();
 	}
 
 	function count()
 	{	
+
 		tminus(1);
 		var a=document.getElementById("time");
 		var b=document.getElementById("song");
@@ -45,8 +58,10 @@
 		{
 			song.play();
 		}
+		testcolor();
 
 	}
+
 
 	setInterval(count,1000);
 
