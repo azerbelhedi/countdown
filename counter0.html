@@ -49,15 +49,8 @@
 
 	}
 
-	function clin()
-	{
-		if(dp==":"){dp=" ";}
-		else if(dp==" "){dp=":";}
-		reload();
-	}
 	function count()	
-	{	
-		clin();
+	{
 		if(time>0)
 		{
 			time--;
@@ -93,10 +86,8 @@
 		reload();
 	}
 
-
 	document.getElementById("enter").value="";	
 	setInterval(count,1000);
-	//setInterval(clin,1000);
 
 
 </script>
